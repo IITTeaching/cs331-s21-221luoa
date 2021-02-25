@@ -44,7 +44,6 @@ def compute_ngrams(toks, n=2):
             gramDict[gram[0]].append(temp)
         else:
             gramDict[gram[0]] = [temp]
-    
 
     return gramDict
 
