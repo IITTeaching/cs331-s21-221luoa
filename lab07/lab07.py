@@ -4,7 +4,7 @@ from unittest import TestCase
 ################################################################################
 # EXTENSIBLE xASxTABLE
 ################################################################################
-class ExtensiblexasxTable:
+class ExtensiblehashTable:
 
     def __init__(self, n_buckets=1000, fillfactor=0.5):
         self.n_buckets = n_buckets
@@ -122,7 +122,7 @@ class ExtensiblexasxTable:
 # points: 20
 def test_insert():
     tc = TestCase()
-    x = ExtensiblexasxTable(n_buckets=100000)
+    x = ExtensiblehashTable(n_buckets=100000)
 
     for i in range(1,10000):
         x[i] = i
@@ -143,7 +143,7 @@ def test_insert():
 # points: 10
 def test_getitem():
     tc = TestCase()
-    x = ExtensiblexasxTable()
+    x = ExtensiblehashTable()
 
     for i in range(0,100):
         x[i] = i * 2
@@ -155,7 +155,7 @@ def test_getitem():
 # points: 10
 def test_iteration():
     tc = TestCase()
-    x = ExtensiblexasxTable(n_buckets=100)
+    x = ExtensiblehashTable(n_buckets=100)
     entries = [ (random.randint(0,10000), i) for i in range(100) ]
     keys = [ k for k, v in entries ]
     values = [ v for k, v in entries ]
@@ -173,7 +173,7 @@ def test_iteration():
 # points: 20
 def test_modification():
     tc = TestCase()
-    x = ExtensiblexasxTable()
+    x = ExtensiblehashTable()
     random.seed(1234)
     keys = [ random.randint(0,10000000) for i in range(100) ]
 
@@ -190,7 +190,7 @@ def test_modification():
 # points: 20
 def test_extension():
     tc = TestCase()
-    x = ExtensiblexasxTable(n_buckets=100,fillfactor=0.5)
+    x = ExtensiblehashTable(n_buckets=100,fillfactor=0.5)
     nitems = 10000
     for i in range(nitems):
         x[i] = i
@@ -205,7 +205,7 @@ def test_extension():
 # points: 20
 def test_deletion():
     tc = TestCase()
-    x = ExtensiblexasxTable(n_buckets=100000)
+    x = ExtensiblehashTable(n_buckets=100000)
     random.seed(1234)
     keys = [ random.randint(0,1000000) for i in range(10) ]
     for k in keys:
