@@ -2,9 +2,15 @@ import random
 from unittest import TestCase
 
 ################################################################################
+<<<<<<< HEAD
 # EXTENSIBLE xASxTABLE
 ################################################################################
 class ExtensiblehashTable:
+=======
+# EXTENSIBLE HASHTABLE
+################################################################################
+class ExtensibleHashTable:
+>>>>>>> 48d025b587b04202bf53343d8163ee6ff49ed76d
 
     def __init__(self, n_buckets=1000, fillfactor=0.5):
         self.n_buckets = n_buckets
@@ -18,7 +24,7 @@ class ExtensiblehashTable:
 
         if self.buckets[x] and self.buckets[x][0] == key:
             return self.buckets[x]
-        
+
         for x in range(self.n_buckets):
             if self.buckets[x] and self.buckets[x][0] == key:
                 return self.buckets[x]

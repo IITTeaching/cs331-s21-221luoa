@@ -45,7 +45,7 @@ class LinkedList:
         ### BEGIN SOLUTION
         if self._normalize_idx >= self.length:
             raise IndexError
-        
+
         ### END SOLUTION
 
     def __setitem__(self, idx, value):
@@ -90,7 +90,7 @@ class LinkedList:
         node as needed"""
         assert len(self) > 0
         ### BEGIN SOLUTION
-        
+
         ### END SOLUTION
 
     def cursor_insert(self, value):

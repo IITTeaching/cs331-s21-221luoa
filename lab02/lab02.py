@@ -117,7 +117,7 @@ def gen_passage(ngram_dict, length=100):
             currentKey = random.choice(sorted(ngram_dict.keys()))
             passage += currentKey + " "
     passage = passage.split()[:length]
-    
+
     ans = " ".join(passage)
     return ans
 

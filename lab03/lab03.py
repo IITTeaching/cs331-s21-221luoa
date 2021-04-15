@@ -117,7 +117,7 @@ class PrefixSearcher():
     def __init__(self, document, k):
         """
         Initializes a prefix searcher using a document and a maximum
-        search string length k. 
+        search string length k.
         """
         build = []
         for x in range(len(document)):
@@ -183,7 +183,7 @@ class SuffixArray():
         self.doc = document
         compare = lambda x,y:  0 if x == y else (-1 if x < y else 1)
         self.arr = mysort([x for x in range(len(document))], compare)
-        
+
     def positions(self, searchstr: str):
         """
         Returns all the positions of searchstr in the documented indexed by the suffix array.
@@ -228,9 +228,18 @@ def test3_2():
     md_url = 'https://www.gutenberg.org/files/2701/2701-0.txt'
     md_text = urllib.request.urlopen(md_url).read().decode()
     s = SuffixArray(md_text[0:1000])
+<<<<<<< variant A
     tc.assertTrue(s.contains("Moby Dick"))
+>>>>>>> variant B
+    tc.assertTrue(s.contains("Moby-Dick"))
+======= end
     tc.assertTrue(s.contains("Herman Melville"))
+<<<<<<< variant A
     #tc.assertEqual(s.positions("Moby Dick"), [427]) Commented out bad test
+>>>>>>> variant B
+    posset = set(s.positions("Moby-Dick"))
+    tc.assertEqual(posset, {355, 356})
+======= end
 
 
 #################################################################################
